@@ -224,6 +224,17 @@ void main() {
         true);
   });
 
+  test('bluetooth.genericAttributeProfile capability is valid', () async {
+    config.capabilities = 'bluetooth.genericAttributeProfile';
+    await AppxManifest().generateAppxManifest();
+    var manifestContent =
+        await File(p.join(tempFolderPath, 'AppxManifest.xml')).readAsString();
+    expect(
+        manifestContent.contains(
+            '<DeviceCapability Name="bluetooth.genericAttributeProfile" />'),
+        true);
+  });
+
   test('languages is valid', () async {
     config.languages = ['en-us', 'he-il'];
     await AppxManifest().generateAppxManifest();

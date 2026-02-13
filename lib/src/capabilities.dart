@@ -39,6 +39,8 @@ const appCapabilities = {
     'humaninterfacedevice',
     'pointOfService',
     'bluetooth',
+    'bluetooth.genericAttributeProfile',
+    'bluetooth.rfcomm',
     'wiFiControl',
     'radios',
     'optical',
